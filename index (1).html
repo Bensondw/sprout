@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<HTML>
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Sprout</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <!-- <script type="text/javascript" src="/account/js/materialize.min.js"></script> -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/> -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+      <!-- style for sliders -->
+     <style> 
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 60px;
+          height: 34px;
+        }
+
+        .switch input {display:none;}
+
+        .slider {
+          height:34px;
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+
+        input:checked + .slider {
+          background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+          box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+          -webkit-transform: translateX(26px);
+          -ms-transform: translateX(26px);
+          transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+          border-radius: 34px;
+        }
+
+        .slider.round:before {
+          border-radius: 50%;
+        }
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- <div name="navigation div">
+
+      <nav class="black" role="navigation">
+
+        <div class="nav-wrapper container">
+
+          <a id="logo-container" href="#" class=" teal-text brand-logo" >Super Monitor</a>
+
+          <ul class="right hide-on-med-and-down">
+
+            
+
+          </ul>
+
+          <ul id="nav-mobile" class="side-nav">
+
+            <li><a href="#">Navbar Link</a></li>
+
+          </ul>
+
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+
+        </div>
+
+      </nav>
+
+    </div> -->
+
+
+  <div id="index-banner" class="parallax-container" style="height: 250px;">
+    <div class="section no-pad-bot" >
+      
+      <div class="container" >
+        <br><br>
+        <h1 class="header center black-text text-lighten-2" style="font-style:oblique;">Sprout</h1>
+        <div class="row center" >
+          
+        </div>
+        
+        <br><br>
+
+      </div>
+    </div>
+
+    <div class="parallax"><img src="https://i.imgur.com/XsyuyBX.jpg" alt="Unsplashed background img 1"></div> <!-- green forest -->
+
+    <!-- <div class="parallax"><img src="https://i.imgur.com/6w5YDLO.jpg" alt="Unsplashed background img 1"></div> <!-- clouds --> -->
+
+    <!-- <div class="parallax"><img src="https://i.imgur.com/n0dGM6V.jpg" alt="Unsplashed background img 1"></div> -->
+
+    <!-- <div class="parallax"><img src="https://i.pinimg.com/originals/1d/6c/f5/1d6cf581bfb38eec88a3b4c33380f9c2.jpg" alt="Unsplashed background img 1"></div> -->
+
+    
+
+    
+
+  </div>
+
+
+
+  	<div class="row">
+
+      <div class="row center">
+
+            <div class="col s3">
+
+              <h5>Bedtime settings</h5>
+              
+              
+                <table>
+                <tr>
+                  <th>Option</th>
+                  <th>Status</th>
+                  
+                </tr>
+                <tr>
+                  <td>Music:</td>
+                  <td>
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                  
+                </tr>
+                <tr>
+                  <td>Light Show:</td>
+                  <td>
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                  
+                </tr>
+                <tr>
+                  <td>Motion Detection:</td>
+                  <td>
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                
+              </table>
+             
+                <!-- sliders for settings -->
+<!-- 
+                <h2>Toggle Switch</h2>
+
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider"></span>
+                </label>
+
+                <label class="switch">
+                  <input type="checkbox" checked>
+                  <span class="slider"></span>
+                </label><br><br>
+
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider round"></span>
+                </label>
+
+                <br>
+
+                <label class="switch">
+                  <input type="checkbox" checked>
+                  <span class="slider round"></span>
+                </label> -->
+
+                
+
+              <!-- buttons to turn on light show, adjust microphone status -->
+              <!-- 
+              <button class="btn" onClick="start()">LightShow on</button>
+              <button class="btn" onClick="start()">lightshow Off</button>
+            
+ -->
+
+              <button class="btn" onClick="vid()">Start Bedtime</button>
+
+              <br> <br>
+              
+
+              <button class="btn" onClick="vid()">Pause</button>
+
+
+              
+              
+              <script>
+                function counter() {
+                  $.ajax({
+                  type:'GET',
+                  url:'http://10.10.110.137/cgi-bin/counter.cgi?value=True',
+                  contentType: 'applicatin/json',
+                  success: function(result){}
+                  });
+                  $.ajax({
+                  type:'GET',
+                  url:'http://10.10.110.137/cgi-bin/counter.cgi?value=True',
+                  contentType: 'applicatin/json',
+                  success: function(result){}
+                  });
+                }
+              </script>
+
+                  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+              
+            </div>
+            
+
+          
+            <div class="col s6">
+
+
+
+              <h5>View the current camera feed</h5>
+              
+              <button class="btn" onClick="vid()">Camera Feed</button>
+
+             
+
+              <iframe id="vidfeed" width="660" height="500" src="http://10.37.90.113:9000/stream_simple.html" frameborder="1" allowfullscreen></iframe>
+              
+              <br>
+              <audio controls>
+                <source src="http://10.37.90.113:8000/raspi" >
+                <!-- <source src="horse.mp3" type="audio/mpeg"> -->
+              Your browser does not support the audio element.
+              </audio>
+              <!-- This script will? do we want something to only be going when we tell it? might make the parents feel better -->
+              <script>
+                function vid() {
+                  $.ajax({
+                  type:'GET',
+                  url:'http://10.10.110.137/cgi-bin/start.cgi',
+                  contentType: 'application/json',
+                  success: function(result){}
+                  });
+                }
+              </script>
+              
+
+              <div id="wow"></div>
+                      
+              <!-- This script will start the video feed server when the page loads -->
+              <script>
+                   $(document).ready(function(){
+                            // $.getJSON("http://10.37.174.154/cgi-bin/bluth.cgi", function(data) {
+                            //     $('#wow').append("Your device: " + data);
+                            // });    
+
+                             
+
+                   });
+               </script> 
+
+
+            </div>
+      
+            <div class="col s3">
+              
+              
+              
+              <!-- <button class="btn" onClick="stop()">Audio Feed</button> this button could call the script that starts the icecast server -->
+
+              
+              <!-- this below is a placeholder iframe to demonstrate the idea -->
+              <!-- <iframe width="560" height="315" src="192.168.255.254:8000" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen> -->
+
+               <!--  <iframe width="560" height="315" src="http://10.37.175.105:8000/" frameborder="1" allowfullscreen>
+                
+              </iframe> -->
+
+
+
+              <!-- <audio src="http://10.37.175.105:8000/;"></audio>
+
+              <audio controls src="http://10.37.175.105:8000/;"></audio> -->
+
+              <h5 class="center">Current room conditions</h5>
+
+              <!-- make a table here probably -->
+             <table>
+                <tr>
+                  <th>Measure</th>
+                  <th>Status</th>
+                  
+                </tr>
+                <tr>
+                  <td>Temperature:</td>
+                  <td>72</td>
+                  
+                </tr>
+                <tr>
+                  <td>Humidity:</td>
+                  <td>14%</td>
+                  
+                </tr>
+                <tr>
+                  <td>Current Motion:</td>
+                  <td>No</td>
+                  
+                </tr>
+                <tr>
+                  <td>Motion in last ten minutes:</td>
+                  <td>Yes</td>
+                  
+                </tr>
+                <tr>
+                  <td>Light Show: </td>
+                  <td>Playing</td>
+                  
+                </tr>
+                <tr>
+                  <td>Room: </td>
+                  <td>Dark</td>
+                  
+                </tr>
+              </table>
+
+              
+
+              <br>
+
+              
+              <!-- The following script will turn on the mic and start the icecast server -->
+              <script>
+                 $(document).ready(function(){
+                          // $.getJSON("http://10.37.174.154/cgi-bin/bluth.cgi", function(data) {
+                          //     $('#wow').append("Your device: " + data);
+                          // });    
+
+          // we can use these functions to load the sensors like temp, humidity, 
+
+                 });
+             </script> 
+              
+            </div>
+            
+            
+        </div>
+  			
+    </div>	
+
+	    
+	
+
+  	
+
+    <div class="parallax-container">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <div class="row center">
+            <h5 class="header col s12 light"></h5>
+          </div>
+        </div>
+      </div>
+      <div class="parallax"><img src="https://i.imgur.com/35Lun7R.jpg" alt="Unsplashed background img 3"></div>
+    </div>
+
+  
+
+  
+
+
+
+
+  
+
+    <script>
+      
+      (function($){
+        $(function(){
+
+          $('.button-collapse').sideNav();
+          $('.parallax').parallax();
+
+        }); // end of document ready
+      })(jQuery); // end of jQuery name space
+
+    </script>
+
+  </body>
+
+</HTML>
