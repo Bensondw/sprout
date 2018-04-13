@@ -5,18 +5,27 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <title>Sprout</title>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <!-- <script type="text/javascript" src="/account/js/materialize.min.js"></script> -->
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
     <link rel="icon" href="https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/ce/a7/4e/cea74eda-88fd-b2c8-3a97-b823547b02db/AppIcon-1x_U007emarketing-85-220-5.png/1200x630bb.jpg">
 
+    <!-- <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/> -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
       <!-- style for sliders -->
      <style> 
@@ -82,6 +91,35 @@
 
   <body>
 
+    <!-- <div name="navigation div">
+
+      <nav class="black" role="navigation">
+
+        <div class="nav-wrapper container">
+
+          <a id="logo-container" href="#" class=" teal-text brand-logo" >Super Monitor</a>
+
+          <ul class="right hide-on-med-and-down">
+
+            
+
+          </ul>
+
+          <ul id="nav-mobile" class="side-nav">
+
+            <li><a href="#">Navbar Link</a></li>
+
+          </ul>
+
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+
+        </div>
+
+      </nav>
+
+    </div> -->
+
+
   <div id="index-banner" class="parallax-container" style="height: 250px;">
     <div class="section no-pad-bot" >
       
@@ -99,25 +137,25 @@
 
     <div class="parallax"><img src="https://i.imgur.com/XsyuyBX.jpg" alt="Unsplashed background img 1"></div> <!-- green forest -->
 
-    <!-- <div class="parallax"><img src="file:///Users/bubs/Desktop/sprout/cgi-bin/forest.jpg" alt="Unsplashed background img 1"></div>  -->
-
-    <!-- http://10.10.110.137/cgi-bin/forest.jpg -->
-
-
-    <!-- <div class="parallax"><img src="https://i.imgur.com/6w5YDLO.jpg" alt="Unsplashed background img 1"></div> clouds -->
-
+    <!-- <div class="parallax"><img src="https://i.imgur.com/6w5YDLO.jpg" alt="Unsplashed background img 1"></div> <!-- clouds --> -->
 
     <!-- <div class="parallax"><img src="https://i.imgur.com/n0dGM6V.jpg" alt="Unsplashed background img 1"></div> -->
 
     <!-- <div class="parallax"><img src="https://i.pinimg.com/originals/1d/6c/f5/1d6cf581bfb38eec88a3b4c33380f9c2.jpg" alt="Unsplashed background img 1"></div> -->
 
+    
+
+    
+
   </div>
+
+
 
   	<div class="row">
 
       <div class="row center">
 
-            <div class="col s3" id="settings and logic for bedtime show">
+            <div class="col s3">
 
               <h5>Bedtime settings</h5>
               
@@ -160,11 +198,22 @@
                 
               </table>
              
-              <button class="btn" onClick="bedtime()">Start Bedtime</button>
+              <button class="btn" id="startBedtime" onClick="bedtime()">
+
+              Start Bedtime
+
+
+              </button>
               
               <script type="text/javascript">
 
+                var 
+
                 function bedtime() {
+
+                  if (document.getElementById('startBedtime').innerHTML == "Start Bedtime") {
+
+                  }
 
                   var starshow = document.getElementById('lightSlider');
                   var music = document.getElementById('musicSlider');
@@ -173,7 +222,7 @@
                   if (starshow.checked == true) {
                     $.ajax({
                     type:'GET',
-                    url:'http://10.10.110.137/cgi-bin/lightsOn.cgi',
+                    url:'http://10.10.90.113/cgi-bin/lightsOn.cgi',
                     contentType: 'application/json',
                     success: function(result){}
                     });
@@ -182,7 +231,7 @@
                   if (music.checked == true) {
                     $.ajax({
                     type:'GET',
-                    url:'http://10.10.110.137/cgi-bin/musicOn.cgi',
+                    url:'http://10.10.90.113/cgi-bin/musicOn.cgi',
                     contentType: 'application/json',
                     success: function(result){}
                     });
@@ -193,7 +242,7 @@
                   if (motion.checked == true) {
                     $.ajax({
                     type:'GET',
-                    url:'http://10.10.110.137/cgi-bin/motionOn.cgi',
+                    url:'http://10.10.90.113/cgi-bin/motionOn.cgi',
                     contentType: 'application/json',
                     success: function(result){}
                     });
@@ -234,19 +283,30 @@
               </script>
 
 
-
-
-
-
               <br> <br>
               
 
-              <button class="btn" onClick="vid()">Pause</button>
+              <!-- <button class="btn" onClick="vid()">Pause</button> -->
+              <!-- js that changes the text of the button when it is clicked so that it changes to resume - is this part necessary? -->
 
-                <!-- js that changes the text of the button when it is clicked so that it changes to resume - is this part necessary? -->
               
               
-             
+              <script>
+                function counter() {
+                  $.ajax({
+                  type:'GET',
+                  url:'http://10.10.110.137/cgi-bin/counter.cgi?value=True',
+                  contentType: 'applicatin/json',
+                  success: function(result){}
+                  });
+                  $.ajax({
+                  type:'GET',
+                  url:'http://10.10.110.137/cgi-bin/counter.cgi?value=True',
+                  contentType: 'applicatin/json',
+                  success: function(result){}
+                  });
+                }
+              </script>
 
                   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
               
@@ -259,41 +319,43 @@
 
 
               <h5>Camera Feed and Room Audio</h5>
+
+              <!-- This script will start the video feed server when the page loads -->
+             <!--  <script>
+                   $(document).ready(function(){
+                            $.ajax({
+                            type:'GET',
+                            url:'http://10.10.90.113/cgi-bin/startCam.cgi',
+                            contentType: 'application/json',
+                            success: function(result){}
+                            });    
+                   }
+               </script>  -->
+
+               <!-- or we can start it just with a click -->
               
-              <button id="cameraFeed" class="btn" onClick="vid()">Camera Feed On</button>
+              <button class="btn" id="cameraButton" onClick="videoCamera()">Camera Feed On</button>
+              <br><br>
 
-             <script type="text/javascript">
-
-              // make it on document ready that the iframe doesn't display by making its height and width 0?
-
-
-              // when camera feed button is pressed, 1)bring in the iframe, 2) change the text on the button to say stop camera feed
-
-
-              // if the camera feed button is pressed when camera feed is going, then minimize the iframe again and change the text back to start
-
-              // we can also have this actually start and stop the server, or just have the server always running in the background
-
-
-
-                
-                var feed = document.getElementById('cameraFeed');
-
-
-                function vid() {
-                  feed.text = "Camera Feed Off"
+             
+              <script>
+                function videoCamera() {
+                  $.ajax({
+                  type:'GET',
+                  url:'http://10.37.90.113/cgi-bin/startCam.cgi',
+                  contentType: 'application/json',
+                  success: function(result){}
+                  });
                 }
-
-
-
-
-             </script>
+              </script>
 
               <iframe id="vidfeed" width="660" height="500" src="http://10.37.90.113:9000/stream_simple.html" frameborder="1" allowfullscreen></iframe>
               
               <br>
 
+
               <h5>Audio</h5>
+
 
               <audio controls>
                 <source src="http://10.37.90.113:8000/raspi" >
@@ -301,31 +363,12 @@
               Your browser does not support the audio element.
               </audio>
               <!-- This script will? do we want something to only be going when we tell it? might make the parents feel better -->
-              <script>
-                function something() {
-                  $.ajax({
-                  type:'GET',
-                  url:'http://10.10.110.137/cgi-bin/start.cgi',
-                  contentType: 'application/json',
-                  success: function(result){}
-                  });
-                }
-              </script>
+              
               
 
               <div id="wow"></div>
                       
-              <!-- This script will start the video feed server when the page loads -->
-              <script>
-                   $(document).ready(function(){
-                            // $.getJSON("http://10.37.174.154/cgi-bin/bluth.cgi", function(data) {
-                            //     $('#wow').append("Your device: " + data);
-                            // });    
-
-                             
-
-                   });
-               </script> 
+              
 
 
             </div>
@@ -387,7 +430,6 @@
                 <tr>
                   <td>Room: </td>
                   <td>Dark</td>
-                  <!-- might not need this one, kind of redundant if we already check for motion, although it does provide another layer of certainty to if the child is up and running around or not. kids probably wont want to play in the dark, they will likely turn on the light if they are going to be awake in their room -->
                   
                 </tr>
               </table>
@@ -410,11 +452,16 @@
              </script> 
               
             </div>
-
+            
+            
         </div>
   			
     </div>	
 
+	    
+	
+
+  	
 
     <div class="parallax-container">
       <div class="section no-pad-bot">
@@ -427,12 +474,23 @@
       <div class="parallax"><img src="https://i.imgur.com/35Lun7R.jpg" alt="Unsplashed background img 3"></div>
     </div>
 
+  
+
+  
+
+
+
+
+  
+
     <script>
       
       (function($){
         $(function(){
+
           $('.button-collapse').sideNav();
           $('.parallax').parallax();
+
         }); // end of document ready
       })(jQuery); // end of jQuery name space
 
